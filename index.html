@@ -30,6 +30,47 @@
         <p><span class="legend-color heap-segment"></span> Heap - Memoria allocata dinamicamente</p>
         <p><span class="legend-color stack-segment"></span> Stack - Contiene chiamate alle funzioni e variabili locali</p>
     </div>
-    <script src="script.js"></script>
+    <script>
+        function allocateMemory() {
+            const heap = document.getElementById("heap");
+            let newBlock = document.createElement("div");
+            newBlock.className = "heap-item";
+            newBlock.textContent = "Blocco Heap";
+            heap.appendChild(newBlock);
+            logOperation("Allocato un blocco nella Heap");
+        }
+        
+        function deallocateMemory() {
+            const heap = document.getElementById("heap");
+            if (heap.lastChild) {
+                heap.removeChild(heap.lastChild);
+                logOperation("Deallocato un blocco dalla Heap");
+            }
+        }
+        
+        function pushStack() {
+            const stack = document.getElementById("stack");
+            let newFrame = document.createElement("div");
+            newFrame.className = "stack-item";
+            newFrame.textContent = "Funzione";
+            stack.appendChild(newFrame);
+            logOperation("Aggiunta una funzione allo Stack");
+        }
+        
+        function popStack() {
+            const stack = document.getElementById("stack");
+            if (stack.lastChild) {
+                stack.removeChild(stack.lastChild);
+                logOperation("Rimossa una funzione dallo Stack");
+            }
+        }
+        
+        function logOperation(message) {
+            const logList = document.getElementById("log-list");
+            let logEntry = document.createElement("li");
+            logEntry.textContent = message;
+            logList.appendChild(logEntry);
+        }
+    </script>
 </body>
 </html>
