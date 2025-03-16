@@ -6,6 +6,7 @@ body {
     margin: 20px;
     background-color: #ecf0f1;
 }
+
 .memory-container {
     display: flex;
     flex-direction: column;
@@ -16,6 +17,7 @@ body {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     background-color: white;
 }
+
 .segment {
     padding: 15px;
     border-bottom: 2px solid black;
@@ -24,6 +26,7 @@ body {
     font-size: 1.2em;
     position: relative;
 }
+
 .text-segment { background-color: #3498db; color: white; }
 .data-segment { background-color: #2ecc71; color: white; }
 .heap-segment, .stack-segment {
@@ -33,15 +36,18 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    padding-top: 25px;
+    padding-bottom: 10px;
 }
+
 .heap-segment { background-color: #e74c3c; color: white; }
 .stack-segment { background-color: #f39c12; color: white; }
+
 .buttons {
     margin-top: 20px;
     display: flex;
     gap: 10px;
 }
+
 button {
     padding: 10px 15px;
     border: none;
@@ -52,9 +58,11 @@ button {
     transition: 0.3s;
     font-weight: bold;
 }
+
 button:hover {
     background-color: #2c3e50;
 }
+
 .legend {
     margin-top: 20px;
     padding: 10px;
@@ -62,11 +70,13 @@ button:hover {
     border-radius: 10px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
+
 .legend p {
     margin: 5px 0;
     display: flex;
     align-items: center;
 }
+
 .legend-color {
     width: 20px;
     height: 20px;
@@ -74,6 +84,7 @@ button:hover {
     margin-right: 10px;
     border-radius: 5px;
 }
+
 .log {
     margin-top: 20px;
     padding: 10px;
@@ -82,6 +93,7 @@ button:hover {
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     width: 350px;
 }
+
 .heap-segment::before, .stack-segment::before {
     content: attr(data-label);
     position: absolute;
@@ -93,3 +105,13 @@ button:hover {
     color: white;
 }
 
+.heap-item, .stack-item {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    margin: 4px auto;
+    padding: 5px;
+    border-radius: 5px;
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
+}
